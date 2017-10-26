@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+  <link rel="stylesheet" href="/stylesheets/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="/stylesheets/jquery-ui.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <script src="/javascripts/jquery-2.1.3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.10/clipboard.min.js"></script>
+  <script src="/javascripts/dxmcalculator.js"></script>
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-4573307-8', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <title>TripSit DXM Calculator Tool</title>
+</head>
+
+<body>
+  <div role="navigation" style="padding:0;margin:0" class="navbar navbar-inverse navbar-static-top">
+    <a href="/"><img src="/images/chat-banner.png" style="padding:0;margin:0;width:100%;" class="img-responsive"></a>
+    <ul style="padding:0;margin:0" class="nav navbar-nav navbar-right top-nav">
+      <li class="choice"><a href="http://tripsit.me/about">About TripSit</a></li>
+      <li class="choice"><a href="http://tripsit.me/contact-us">Contact Us</a></li>
+      <li class="choice"><a href="http://drugs.tripsit.me/">Factsheets</a></li>
+      <li class="choice"><a href="http://wiki.tripsit.me/">Wiki</a></li>
+      <li class="choice"><a href="https://play.google.com/store/apps/details?id=me.tripsit.tripmobile">Mobile App</a></li>
+      <li class="choice"><a href="http://tripsit.me/chat-overview/">Chat Overview</a></li>
+      <li class="choice"><a href="http://tripsit.me/donate/">Donate</a></li>
+    </ul>
+  </div>
+
+  <div style="margin-top:2%;" class="container-fluid">
+    <div class="jumbotron">
+
+
+      <div class="form-inline">
+        <form action="" method="POST" name="tform" type="post" class="">
+          <h2><b>DXM Dosage Calculator</b></h3>
+             <br>
+               <h4>This is a simple calculator made to help you figure out how much <a href="http://drugs.tripsit.me/dxm">DXM</a> you need to reach each different plateau. Please make sure to research the substance thoroughly before using it.
+               <br>
+              Make sure to use products with DXM only.
+             </h4>
+             <div class="form-group">
+               <h4> I weigh 
+        <input type="text" name="weight" value="" size="6" onchange="fix()" class="form-control" placeholder="Weight">
+                in
+             <select name="wunit" type="text" onchange="fix()" class="form-control">>
+              <option value="1" selected>kg
+              <option value="0.4536">lbs
+           </select>&nbsp;and I want to take&nbsp;
+              <select name="substance" onchange="fix()" class="form-control" id="substancetype">
+              <option value="88.5" selected>Robitussin (oz)
+              <option value="3">Robitussin (ml)
+              <option value="1">Pure (mg)
+              <option value="15">Robitussin Gelcaps (gelcaps)
+              <option value="30">30mg Gelcaps (30 mg gelcaps)
+           </select>
+         </div>
+         &nbsp;.<button type="button" class="btn btn-primary">Calculate</button>
+       </h4>
+
+
+           <p>
+             <table>
+              <tr>
+                 <td class="td-left">
+                    <h4>Plateau</h4>
+                 </td>
+                 <td>
+                    <h4>Minimum</h4>
+                 </td>
+                 <td>
+                    <h4>Maximum</h4>
+                 </td>
+              </tr>
+              <tr  class="tr-first">
+                 <td class="td-left">
+                    1st:
+                 </td>
+                 <td>
+                    <input type="text" name="p1l" value="0" size="18" class="form-control">
+                 </td>
+                 <td>
+                    <input type="text" name="p1h" value="0" size="18" class="form-control">
+                 </td>
+              </tr>
+              <tr class="tr-second">
+                 <td class="td-left">
+                    2nd:
+                 </td>
+                 <td>
+                    <input type="text" name="p2l" value="0" size="18" class="form-control">
+                 </td>
+                 <td>
+                    <input type="text" name="p2h" value="0" size="18" class="form-control">
+                 </td>
+              </tr>
+              <tr class="tr-third">
+                 <td class="td-left">
+                    3rd:
+                 </td>
+                 <td>
+                    <input type="text" name="p3l" value="0" size="18" class="form-control">
+                 </td>
+                 <td>
+                    <input type="text" name="p3h" value="0" size="18" class="form-control">
+                 </td>
+              </tr>
+              <tr class="tr-fourth">
+                 <td class="td-left">
+                    4th:
+                 </td>
+                 <td>
+                    <input type="text" name="p4l" value="0" size="18" class="form-control">
+                 </td>
+                 <td>
+                    <input type="text" name="p4h" value="0" size="18" class="form-control">
+                 </td>
+              </tr>
+           </table>
+           </form>
+           </div>
+          <p>Note: You should always start low and work your way up untill you find the doses that are right for you.</p>
+        </p>
+        <p>Please note, these tools were developed and tested to the best possible ability by the TripSit team, and the greatest effort has been made not to produce incorrect or misleading results, though for unforeseen reasons these may occur. Always check
+          your maths, and be careful. If you have any questions, suggestions or error reports on this tool, you can contact us <a href="http://tripsit.me/contact-us/">here</a><span>.</span></p>
+    </div
+  </div>
+</div>
+</body>
+</html>

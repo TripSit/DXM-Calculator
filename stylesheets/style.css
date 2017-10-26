@@ -1,0 +1,324 @@
+body {
+  padding-bottom: 20px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  line-height:120%;
+}
+
+a {
+  color: #00B7FF;
+}
+
+td {
+word-wrap: break-word;
+/*width: "39";*/
+}
+.choice{font-family: Arial,sans-serif;font:white;}
+.choice:hover {
+background-color: #7900C2;
+transition: color 0.25s ease,background-color 0.25s ease;
+}
+.navbar-nav {
+color:white;
+}
+.navbar {
+background-color: #000;
+}
+.navbar-inverse {
+background-image:none;
+color: white;
+}
+
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+
+
+/*
+ * Global add-ons
+ */
+
+.glossary {
+  border-bottom: 1px #50007F dotted;
+  color: #50007F;
+}
+
+.navbar-right {
+  margin-top: 20px;
+  margin-right: 5px;
+}
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+.navbar-fixed-top {
+  border: 0;
+}
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    padding:20px;
+    margin-right:15px;
+    margin-left:0px;
+    margin-top:0px;
+    padding-left:10px;
+    padding-top:0px;
+    min-height:100vh;
+    width:16%;
+    float:left;
+    background-color: #f5f5f5;
+    border-right: 1px solid #eee;
+    display:block;
+  }
+}
+
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: #fff;
+  background-color: #428bca;
+}
+
+
+/*
+ * Main content
+ */
+
+.main {
+  padding: 20px;
+  margin-left:15%;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+
+.control-label {
+font-size: 15px;
+font-weight: normal;
+}
+/*
+ * Placeholder dashboard ideas
+ */
+
+.placeholders {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.placeholders h4 {
+  margin-bottom: 0;
+}
+.placeholder {
+  margin-bottom: 20px;
+}
+.placeholder img {
+  display: inline-block;
+  border-radius: 50%;
+}
+
+
+/* Base styles (regardless of theme) */
+.bs-callout {
+  margin: 20px 0;
+  padding: 15px 15px 15px 15px;
+padding-top:5px;
+  border-left: 5px solid #aaa;
+background-color:#eeeeee;
+}
+.bs-callout h4 {
+  margin-top: 0;
+}
+.bs-callout p:last-child {
+  margin-bottom: 0;
+}
+.bs-callout code,
+.bs-callout .highlight {
+  background-color: #fff;
+}
+
+.bs-callout-caution {
+  background-color: #fffacb;
+  border-color: #827700;
+}
+
+/* Themes for different contexts */
+.bs-callout-lowdec {
+  background-color: #d8effe;
+  border-color: #00426c;
+}
+/* Themes for different contexts */
+.bs-callout-danger {
+  background-color: #fdc9cc;
+  border-color: #7f0006;
+}
+.bs-callout-unsafe {
+  background-color: #ffe6cb;
+  border-color: #874600;
+}
+.bs-callout-lowinc {
+  background-color: #cbf0d1;
+  border-color: #077c1b;
+}
+.bs-callout-ss {
+  background-color: #dfd3ec;
+  border-color: #3d166c;
+}
+.bs-callout-psychedelic {
+ /* background-color: #CCFFCC;*/
+  border-color: #00A388;
+}
+.bs-callout-opioid {
+ /* background-color: #CCFFCC;*/
+  border-color: #C0D9AF;
+}
+.bs-callout-stimulant {
+  /*background-color: #BFEFFF;*/
+  border-color: #31B0D5;
+}
+.bs-callout-dissociative {
+/*background-color:#B23609;*/
+border-color:#9b59b6;
+}
+.bs-callout-benzodiazepine {
+border-color:#000;
+}
+.bs-callout-research-chemical {
+border-color:#EC971F;
+}
+.bs-callout-habit-forming{
+border-color:#e67e22;
+}
+.bs-callout-depressant {
+border-color:#C9302C;
+}
+.bs-callout-tentative {
+border-color:#FFFF9D;
+}
+
+.catcallout {
+  background-color: #FFF;
+}
+
+.phaedra-colors .label {
+  color: #001713;
+}
+.phaedra-colors .label-default {
+  background-color: #95a5a6;
+}
+.phaedra-colors .label-default[href]:hover,
+.phaedra-colors .label-default[href]:focus {
+  background-color: #7f8c8d;
+}
+.label-psychedelic {
+  background-color: #00A388;
+}
+.phaedra-colors .label-primary[href]:hover,
+.phaedra-colors .label-primary[href]:focus {
+  background-color: #007D68;
+}
+.label-empathogen {
+  background-color: #79BD8F;
+}
+.phaedra-colors .label-success[href]:hover,
+.phaedra-colors .label-success[href]:focus {
+  background-color: #659E78;
+}
+.phaedra-colors .label-info {
+  background-color: #BEEB9F;
+}
+.phaedra-colors .label-info[href]:hover,
+.phaedra-colors .label-info[href]:focus {
+  background-color: #A5CC8A;
+}
+.label-tentative {
+  background-color: #FFFF9D;
+  color: #001713;
+}
+.phaedra-colors .label-warning[href]:hover,
+.phaedra-colors .label-warning[href]:focus {
+  background-color: #D1D181;
+}
+.phaedra-colors .label-danger {
+  background-color: #FF6138;
+}
+.phaedra-colors .label-danger[href]:hover,
+.phaedra-colors .label-danger[href]:focus {
+  background-color: #D6512F;
+}
+
+.label-disso {
+  background-color: #9b59b6;
+}
+
+.label-habit {
+  background-color: #e67e22;
+}
+
+.jumbotron p {
+line-height: 150%;
+font-size: 12px
+}
+
+table {
+  border: 0;
+  padding: 2px;
+  border-collapse: collapse; border-spacing: 0;
+  width: 50%;
+}
+
+.td-left {
+  width: 39px;
+}
+
+td {
+  text-align: center;
+}
+
+td * {
+  text-align: center;
+}
+
+.tr-first {
+  background-color: #DDA0DD;
+}
+.tr-second {
+  background-color:  #DA70D6;
+}
+.tr-third {
+  background-color: #EE82EE;
+}
+.tr-fourth {
+  background-color: #BA55D3;
+}
