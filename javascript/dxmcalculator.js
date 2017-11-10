@@ -1,9 +1,22 @@
 //function to round numbers
 Number.prototype.round = function(places) {
-  return +(Math.round(this + "e+" + places)  + "e-" + places);
-}
+  return +(Math.round(this + 'e+' + places) + 'e-' + places);
+};
 
+window.onload = function () {
+  var myArray = [
+    { value: 88.5, newtext: 'Robitussin (oz)' },
+    { value: 3, newtext: 'Robitussin (ml)' },
+    { value: 1,  newtext: 'Pure (mg)' },
+    { value: 15, newtext: 'Robitussin Gelcaps (gelcaps)' },
+    { value: 30, newtext: '30mg Gelcaps (30 mg gelcaps)' },
+  ];
 
+  var select = document.getElementById('substancetype');
+  for (i = 0; i < myArray.length; i++) {
+    select.options[select.options.length] = new Option(myArray[i].newtext, myArray[i].value);
+  }
+};
 
 function fix() {
   var t = document.getElementById('substancetype');
