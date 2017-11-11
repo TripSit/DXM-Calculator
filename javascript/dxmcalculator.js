@@ -5,16 +5,16 @@ Number.prototype.round = function(places) {
 
 window.onload = function () {
   var myArray = [
-    { value: 88.5, newtext: 'Robitussin (oz)' },
-    { value: 3, newtext: 'Robitussin (ml)' },
-    { value: 1,  newtext: 'Pure (mg)' },
-    { value: 15, newtext: 'Robitussin Gelcaps (gelcaps)' },
-    { value: 30, newtext: '30mg Gelcaps (30 mg gelcaps)' },
+    { value: 88.5, name: 'Robitussin (oz)' },
+    { value: 3, name: 'Robitussin (ml)' },
+    { value: 1,  name: 'Pure (mg)' },
+    { value: 15, name: 'Robitussin Gelcaps (gelcaps)' },
+    { value: 30, name: '30mg Gelcaps (30 mg gelcaps)' },
   ];
 
   var select = document.getElementById('substancetype');
   for (i = 0; i < myArray.length; i++) {
-    select.options[select.options.length] = new Option(myArray[i].newtext, myArray[i].value);
+    select.options[select.options.length] = new Option(myArray[i].name, myArray[i].value);
   }
 };
 
