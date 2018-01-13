@@ -28,6 +28,9 @@ function fix() {
     parseFloat(document.tform.weight.value) /
     parseFloat(document.tform.substance.options[
       document.tform.substance.selectedIndex].value);
+  if (isNaN(w)) {
+     return;
+  }
   document.tform.p1l.value = (w * 1.5).round(2) + ' ' + unit;
   document.tform.p1h.value = (w * 2.5).round(2) + ' ' + unit;
   document.tform.p2l.value = (w * 2.5).round(2) + ' ' + unit;
