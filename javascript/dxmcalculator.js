@@ -5,11 +5,11 @@ Number.prototype.round = function(places) {
 
 window.onload = function () {
   var myArray = [
-    { value: 88.5, name: 'Robitussin (oz)' },
-    { value: 3, name: 'Robitussin (ml)' },
-    { value: 1,  name: 'Pure (mg)' },
-    { value: 15, name: 'Robitussin Gelcaps (gelcaps)' },
-    { value: 30, name: '30mg Gelcaps (30 mg gelcaps)' },
+    { value: 88.5, name: 'Robitussin DX (oz)', type: 'HBr' },
+    { value: 3, name: 'Robitussin DX (ml)', type: 'HBr' },
+    { value: 1,  name: 'Pure (mg)', type: 'Pure' },
+    { value: 15, name: 'Robitussin Gelcaps (15 mg caps)', type: 'HBr' },
+    { value: 30, name: '30mg Gelcaps (30 mg caps)', type: 'HBr' },
   ];
 
   var select = document.getElementById('substancetype');
@@ -29,14 +29,15 @@ function fix() {
     parseFloat(document.tform.substance.options[
       document.tform.substance.selectedIndex].value);
   if (isNaN(w)) {
-     return;
+    return;
   }
-  document.tform.p1l.value = (w * 1.5).round(2) + ' ' + unit;
-  document.tform.p1h.value = (w * 2.5).round(2) + ' ' + unit;
-  document.tform.p2l.value = (w * 2.5).round(2) + ' ' + unit;
-  document.tform.p2h.value = (w * 7.5).round(2) + ' ' + unit;
-  document.tform.p3l.value = (w * 7.5).round(2) + ' ' + unit;
-  document.tform.p3h.value = (w * 15).round(2) + ' ' + unit;
-  document.tform.p4l.value = (w * 15).round(2) + ' ' + unit;
-  document.tform.p4h.value = (w * 20).round(2) + ' ' + unit;
+
+  $('#p1l').text((w * 1.5).round(2) + ' ' + unit);
+  $('#p1h').text((w * 2.5).round(2) + ' ' + unit);
+  $('#p2l').text((w * 2.5).round(2) + ' ' + unit);
+  $('#p2h').text((w * 7.5).round(2) + ' ' + unit);
+  $('#p3l').text((w * 7.5).round(2) + ' ' + unit);
+  $('#p3h').text((w * 15).round(2) + ' ' + unit);
+  $('#p4l').text((w * 15).round(2) + ' ' + unit);
+  $('#p4h').text((w * 20).round(2) + ' ' + unit);
 }
