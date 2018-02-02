@@ -5,14 +5,12 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
-  <link rel="stylesheet" href="/stylesheets/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="/stylesheets/jquery-ui.css">
-  <link rel="stylesheet" href="/stylesheets/style.css">
-  <script src="/javascript/jquery-2.1.3.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.10/clipboard.min.js"></script>
-  <script src="/javascript/dxmcalculator.js"></script>
+  <link rel="stylesheet" type="text/css" href="stylesheets/lib/bootstrap-theme.min.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/lib/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+  <script type="text/javascript" src="javascript/lib/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/clipboard.js/1.5.10/clipboard.min.js"></script>
+  <script type="text/javascript" src="javascript/dxmcalculator.js"></script>
   <script>
     (function(i, s, o, g, r, a, m) {
       i['GoogleAnalyticsObject'] = r;
@@ -34,7 +32,7 @@
 
 <body>
   <div role="navigation" style="padding:0;margin:0" class="navbar navbar-inverse navbar-static-top">
-    <a href="/"><img src="/images/chat-banner.png" style="padding:0;margin:0;width:100%;" class="img-responsive"></a>
+    <a href="/"><img src="images/chat-banner.png" style="padding:0;margin:0;width:100%;" class="img-responsive"></a>
     <ul style="padding:0;margin:0" class="nav navbar-nav navbar-right top-nav">
       <li class="choice"><a href="http://tripsit.me/about">About TripSit</a></li>
       <li class="choice"><a href="http://tripsit.me/contact-us">Contact Us</a></li>
@@ -54,10 +52,12 @@
         <form action="" method="POST" name="tform" type="post" class="">
           <h2><b>DXM Dosage Calculator</b></h3>
              <br>
-               <h4>This is a simple calculator made to help you figure out how much <a href="http://drugs.tripsit.me/dxm">DXM</a> you need to reach each different plateau. Please make sure to research the substance thoroughly before using it.
+               <h4>This is a simple calculator made to help you figure out how much <a href="http://drugs.tripsit.me/dxm">DXM</a> you need to reach each different plateau. For a description of each plateau click <a href="https://wiki.tripsit.me/wiki/DXM#Plateaus">here.</a></h4>
+               <h4> DXM has several potentially dangerous interactions with pharmaceutical and recreational drugs including analgesics (painkillers), antihistamines, antidepressants and stimulants. For more info see <a href="https://wiki.tripsit.me/wiki/DXM#Adulteration"> here.</a>
+                 <br> For combining with other drugs check out <a href="https://wiki.tripsit.me/wiki/File:Combo_2.png"> Tripsit's Combo Chart</a>  Please make sure to read the label and research the product thoroughly before using it.
+               </h4>
                <br>
-              Make sure to use products with DXM only.
-             </h4>
+               <h4>NOTE: All products listed only contains DXM hBr besides dxm powder which contains pure dxm</h4>
              <div class="form-group">
                <h4> I weigh
         <input type="text" name="weight" value="" size="6" oninput="fix()" class="form-control" placeholder="Weight">
@@ -68,7 +68,7 @@
            </select>&nbsp;and I want to take&nbsp;
               <select name="substance" onchange="fix()" class="form-control" id="substancetype"></select>
          </div>
-       
+
        </h4>
 
 
@@ -85,48 +85,48 @@
                     <h4>Maximum</h4>
                  </td>
               </tr>
-              <tr  class="tr-first">
+              <tr  class="tr-first outputResult">
                  <td class="td-left">
-                    1st:
+                    <p class="tdText">1st:</p>
                  </td>
                  <td>
-                    <input type="text" name="p1l" value="0" size="18" class="form-control">
+                    <p class="tdText"><span id="p1l"></span></p>
                  </td>
-                 <td>
-                    <input type="text" name="p1h" value="0" size="18" class="form-control">
+                 <td class="outputResult">
+                    <p class="tdText"><span id="p1h"></span></p>
                  </td>
               </tr>
-              <tr class="tr-second">
+              <tr class="tr-second outputResult">
                  <td class="td-left">
-                    2nd:
+                    <p class="tdText">2nd:</p>
                  </td>
                  <td>
-                    <input type="text" name="p2l" value="0" size="18" class="form-control">
+                    <p class="tdText"><span id="p2l"></span></p>
                  </td>
                  <td>
-                    <input type="text" name="p2h" value="0" size="18" class="form-control">
+                    <p class="tdText"><span id="p2h"></span></p>
                  </td>
               </tr>
-              <tr class="tr-third">
+              <tr class="tr-third outputResult">
                  <td class="td-left">
-                    3rd:
+                    <p class="tdText">3rd:</p>
                  </td>
                  <td>
-                    <input type="text" name="p3l" value="0" size="18" class="form-control">
+                    <p class="tdText"><span id="p3l"></span></p>
                  </td>
                  <td>
-                    <input type="text" name="p3h" value="0" size="18" class="form-control">
+                    <p class="tdText"><span id="p3h"></span></p>
                  </td>
               </tr>
-              <tr class="tr-fourth">
+              <tr class="tr-fourth outputResult">
                  <td class="td-left">
-                    4th:
+                    <p class="tdText">4th:</p>
                  </td>
                  <td>
-                    <input type="text" name="p4l" value="0" size="18" class="form-control">
+                    <p class="tdText"><span id="p4l"></span></p>
                  </td>
                  <td>
-                    <input type="text" name="p4h" value="0" size="18" class="form-control">
+                    <p class="tdText"><span id="p4h"></span></p>
                  </td>
               </tr>
            </table>
@@ -136,6 +136,7 @@
         </p>
         <p>Please note, these tools were developed and tested to the best possible ability by the TripSit team, and the greatest effort has been made not to produce incorrect or misleading results, though for unforeseen reasons these may occur. Always check
           your maths, and be careful. If you have any questions, suggestions or error reports on this tool, you can contact us <a href="http://tripsit.me/contact-us/">here</a><span>.</span></p>
+        <p>See a product not listed? Contact us <a href="http://tripsit.me/contact-us/">here</a>  with a link to your product.</p>
     </div
   </div>
 </div>
