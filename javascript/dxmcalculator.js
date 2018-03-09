@@ -1,5 +1,5 @@
 //function to round numbers
-Number.prototype.round = function(places) {
+Number.prototype.round = function (places) {
   return +(Math.round(this + 'e+' + places) + 'e-' + places);
 };
 
@@ -16,9 +16,22 @@ window.onload = function () {
   for (i = 0; i < myArray.length; i++) {
     select.options[select.options.length] = new Option(myArray[i].name, myArray[i].value);
   }
+
+  changeMode();
 };
 
-function fix() {
+function addInfo(weight, unit) {
+  $('#p1l').text((weight * 1.5).round(2) + ' ' + unit);
+  $('#p1h').text((weight * 2.5).round(2) + ' ' + unit);
+  $('#p2l').text((weight * 2.5).round(2) + ' ' + unit);
+  $('#p2h').text((weight * 7.5).round(2) + ' ' + unit);
+  $('#p3l').text((weight * 7.5).round(2) + ' ' + unit);
+  $('#p3h').text((weight * 15).round(2) + ' ' + unit);
+  $('#p4l').text((weight * 15).round(2) + ' ' + unit);
+  $('#p4h').text((weight * 20).round(2) + ' ' + unit);
+}
+
+var fix = function () {
   var t = document.getElementById('substancetype');
   var selectedText = t.options[t.selectedIndex].text;
   var unit = selectedText.match(/\(.*?\)/);
@@ -32,12 +45,32 @@ function fix() {
     return;
   }
 
-  $('#p1l').text((w * 1.5).round(2) + ' ' + unit);
-  $('#p1h').text((w * 2.5).round(2) + ' ' + unit);
-  $('#p2l').text((w * 2.5).round(2) + ' ' + unit);
-  $('#p2h').text((w * 7.5).round(2) + ' ' + unit);
-  $('#p3l').text((w * 7.5).round(2) + ' ' + unit);
-  $('#p3h').text((w * 15).round(2) + ' ' + unit);
-  $('#p4l').text((w * 15).round(2) + ' ' + unit);
-  $('#p4h').text((w * 20).round(2) + ' ' + unit);
-}
+  addInfo(w, unit);
+};
+
+var manual = function () {
+  var w;
+  var per5 = document.getElementById('per5');
+  var per5Value = per5.options[per5.selectedIndex].value;
+  w = parseFloat(document.tform.wunitManual.options[
+      document.tform.wunitManual.selectedIndex].value) *
+    parseFloat(document.tform.weightManual.value) /
+    (document.getElementById('manualMode').value *
+    per5Value);
+  if (isNaN(w)) {
+    return;
+  }
+
+  addInfo(w, 'ml');
+};
+
+var changeMode = function (slow) {
+  if ($('#modeSwitch').prop('checked')) {
+    $('#manualInput').show(slow);
+    $('#autoInput').hide(slow);
+  }else {
+    $('#autoInput').show(slow);
+    $('#manualInput').hide(slow);
+  }
+
+};
