@@ -5,10 +5,12 @@ Number.prototype.round = function (places) {
 
 window.onload = function () {
   var myArray = [
+    // Value is dxm hBr per 1 mL
+    { value: 10, name: 'RoboCough (ml)', type: 'HBr' },
     { value: 88.5, name: 'Robitussin DX (oz)', type: 'HBr' },
     { value: 3, name: 'Robitussin DX (ml)', type: 'HBr' },
-    { value: 1,  name: 'Pure (mg)', type: 'Pure' },
     { value: 15, name: 'Robitussin Gelcaps (15 mg caps)', type: 'HBr' },
+    { value: 1,  name: 'Pure (mg)', type: 'Pure' },
     { value: 30, name: '30mg Gelcaps (30 mg caps)', type: 'HBr' },
   ];
 
@@ -55,7 +57,7 @@ var manual = function () {
   w = parseFloat(document.tform.wunitManual.options[
       document.tform.wunitManual.selectedIndex].value) *
     parseFloat(document.tform.weightManual.value) /
-    (document.getElementById('manualMode').value *
+    (document.getElementById('manualMode').value /
     per5Value);
   if (isNaN(w)) {
     return;
@@ -72,5 +74,4 @@ var changeMode = function (slow) {
     $('#autoInput').show(slow);
     $('#manualInput').hide(slow);
   }
-
 };
