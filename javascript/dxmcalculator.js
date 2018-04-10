@@ -10,7 +10,7 @@ window.onload = function () {
     { value: 88.5, name: 'Robitussin DX (oz)', type: 'HBr' },
     { value: 3, name: 'Robitussin DX (ml)', type: 'HBr' },
     { value: 15, name: 'Robitussin Gelcaps (15 mg caps)', type: 'HBr' },
-    { value: 1,  name: 'Pure (mg)', type: 'Pure' },
+    { value: 1, name: 'Pure (mg)', type: 'Pure' },
     { value: 30, name: '30mg Gelcaps (30 mg caps)', type: 'HBr' },
   ];
 
@@ -37,40 +37,41 @@ var fix = function () {
   var t = document.getElementById('substancetype');
   var selectedText = t.options[t.selectedIndex].text;
   var unit = selectedText.match(/\(.*?\)/);
-  var w;
-  w = parseFloat(document.tform.wunit.options[
-      document.tform.wunit.selectedIndex].value) *
+  
+  var calculate;
+  calculate = parseFloat(document.tform.wunit.options[
+    document.tform.wunit.selectedIndex].value) *
     parseFloat(document.tform.weight.value) /
     parseFloat(document.tform.substance.options[
       document.tform.substance.selectedIndex].value);
-  if (isNaN(w)) {
+  if (isNaN(calculate)) {
     return;
   }
 
-  addInfo(w, unit);
+  addInfo(calculate, unit);
 };
 
 var manual = function () {
-  var w;
+  var calculate;
   var per5 = document.getElementById('per5');
   var per5Value = per5.options[per5.selectedIndex].value;
-  w = parseFloat(document.tform.wunitManual.options[
-      document.tform.wunitManual.selectedIndex].value) *
+  var manual = document.getElementById('manualMode');
+  calculate = parseFloat(document.tform.wunitManual.options[
+    document.tform.wunitManual.selectedIndex].value) *
     parseFloat(document.tform.weightManual.value) /
-    (document.getElementById('manualMode').value /
-    per5Value);
-  if (isNaN(w)) {
+    (manual.value / per5Value);
+  if (isNaN(calculate)) {
     return;
   }
 
-  addInfo(w, 'ml');
+  addInfo(calculate, 'ml');
 };
 
 var changeMode = function (slow) {
   if ($('#modeSwitch').prop('checked')) {
     $('#manualInput').show(slow);
     $('#autoInput').hide(slow);
-  }else {
+  } else {
     $('#autoInput').show(slow);
     $('#manualInput').hide(slow);
   }
