@@ -16,188 +16,250 @@
 </head>
 
 <body>
-  <div class="center">
-    <a href="/"><img src="images/chat-banner.png" style="padding:0;margin:0;width:100%;" class="img-responsive"></a>
-  </div>
-  <nav role="navigation" style="padding:0;margin:0" class="navbar navbar-inverse navbar-static-top">
-    <div class="container-fluid">
-      <div>
-        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar-collapse" aria-expanded="false">
-       <span class="sr-only">Toggle navigation</span>
-       <span class="icon-bar"></span>
-       <span class="icon-bar"></span>
-       <span class="icon-bar"></span>
-      </button>
-      </div>
-
-      <div class="collapse navbar-collapse" id="bs-navbar-collapse">
-        <ul style="padding:0;margin:0" class="nav navbar-nav navbar-right top-nav">
-          <li class="choice"><a href="http://tripsit.me/about">About</a></li>
-          <li class="choice"><a href="http://tripsit.me/contact-us">Contact Us</a></li>
-          <li class="choice"><a href="http://drugs.tripsit.me/">Factsheets</a></li>
-          <li class="choice"><a href="http://wiki.tripsit.me/">Wiki</a></li>
-          <li class="choice"><a href="https://play.google.com/store/apps/details?id=me.tripsit.tripmobile">Mobile App</a></li>
-          <li class="choice"><a href="http://chat.tripsit.me/">Chat</a></li>
-          <li class="choice dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tools<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li class="choice"><a href="http://benzos.tripsit.me/">Benzodiazepine Converter</a></li>
-              <li class="choice"><a href="http://dxm.tripsit.me/">DXM Calculator</a></li>
-              <li class="choice"><a href="http://volume.tripsit.me/">Volumetric Dosing</a></li>
-            </ul>
-          </li>
-          <li class="choice dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Social Media<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li class="choice"><a href="https://www.facebook.com/tripsitme/">Facebook</a></li>
-              <li class="choice"><a href="http://reddit.com/r/tripsit/">Reddit</a></li>
-              <li class="choice"><a href="https://twitter.com/teamtripsit">Twitter</a></li>
-            </ul>
-          </li>
-          <li class="choice"><a href="http://tripsit.me/donate/">Donate</a></li>
-        </ul>
-      </div>
+  <header>
+    <div class="center">
+      <a href="/">
+        <img src="images/chat-banner.png" style="padding:0;margin:0;width:100%;" class="img-responsive">
+      </a>
     </div>
-  </nav>
+    <nav role="navigation" style="padding:0;margin:0" class="navbar navbar-inverse navbar-static-top">
+      <div class="container-fluid">
+        <div>
+          <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar-collapse" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-navbar-collapse">
+          <ul style="padding:0;margin:0" class="nav navbar-nav navbar-right top-nav">
+            <li class="choice">
+              <a href="http://tripsit.me/about">About</a>
+            </li>
+            <li class="choice">
+              <a href="http://tripsit.me/contact-us">Contact Us</a>
+            </li>
+            <li class="choice">
+              <a href="http://drugs.tripsit.me/">Factsheets</a>
+            </li>
+            <li class="choice">
+              <a href="http://wiki.tripsit.me/">Wiki</a>
+            </li>
+            <li class="choice">
+              <a href="https://play.google.com/store/apps/details?id=me.tripsit.tripmobile">Mobile App</a>
+            </li>
+            <li class="choice">
+              <a href="http://chat.tripsit.me/">Chat</a>
+            </li>
+            <li class="choice dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tools
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li class="choice">
+                  <a href="http://benzos.tripsit.me/">Benzodiazepine Converter</a>
+                </li>
+                <li class="choice">
+                  <a href="http://dxm.tripsit.me/">DXM Calculator</a>
+                </li>
+                <li class="choice">
+                  <a href="http://volume.tripsit.me/">Volumetric Dosing</a>
+                </li>
+              </ul>
+            </li>
+            <li class="choice dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Social Media
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li class="choice">
+                  <a href="https://www.facebook.com/tripsitme/">Facebook</a>
+                </li>
+                <li class="choice">
+                  <a href="http://reddit.com/r/tripsit/">Reddit</a>
+                </li>
+                <li class="choice">
+                  <a href="https://twitter.com/teamtripsit">Twitter</a>
+                </li>
+              </ul>
+            </li>
+            <li class="choice">
+              <a href="http://tripsit.me/donate/">Donate</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
 
   <div style="margin-top:2%;" class="container-fluid">
     <div class="jumbotron">
-      <div class="form-inline">
-        <form action="" method="POST" name="tform" type="post" class="">
-          <h2><b>DXM Dosage Calculator</b></h3>
-             <br>
-               <h4>This is a simple calculator designed to help you discern how much <a href="http://drugs.tripsit.me/dxm">DXM</a> you need to take reach each plateau of experience, depending on variable factors such as your weight and concentration of the product you're using. For a description of the plateau model, and the effects you can expect at each level, click <a href="https://wiki.tripsit.me/wiki/DXM#Plateaus">here.</a></h4>
-               <h4> DXM-containing products may also contain several potentially
-               dangerous adulterants; you must make sure that your product
-               contains only DXM as its active ingredient. For more information
-               about DXM adulterants, see <a
-               href="https://wiki.tripsit.me/wiki/DXM#Adulteration">here.</a></h4>
-                 <h4> For information about combining DXM with other drugs, check out our <a href="https://wiki.tripsit.me/wiki/File:Combo_2.png">Combo Chart</a>. Make sure to read the label and research the product thoroughly before using it.
-               </h4>
-               <br>
 
-              <div class="flex">
-                <h4>Auto</h4>
+      <h2>
+        <b>DXM Dosage Calculator</b>
+        </h3>
+        <br>
+        <h4>This is a simple calculator designed to help you discern how much
+          <a href="http://drugs.tripsit.me/dxm">DXM</a> you need to take reach each plateau of experience, depending on variable factors such as your weight and
+          concentration of the product you're using. For a description of the plateau model, and the effects you can expect
+          at each level, click
+          <a href="https://wiki.tripsit.me/wiki/DXM#Plateaus">here.</a>
+        </h4>
+        <h4> DXM-containing products may also contain several potentially dangerous adulterants; you must make sure that your
+          product contains only DXM as its active ingredient. For more information about DXM adulterants, see
+          <a href="https://wiki.tripsit.me/wiki/DXM#Adulteration">here.</a>
+        </h4>
+        <h4> For information about combining DXM with other drugs, check out our
+          <a href="https://wiki.tripsit.me/wiki/File:Combo_2.png">Combo Chart</a>. Make sure to read the label and research the product thoroughly before using it.
+        </h4>
+        <br>
 
-                  <div id="checkbox">
-               <label class="switch">
-                <input type="checkbox" id="modeSwitch" onclick="changeMode('slow')">
-                <span class="slider round"></span>
-               </label>
-             </div>
-             <h4>Manual</h4>
-             </div>
-             <div class="form-group" id="autoInput">
-               <h2>Auto mode:</h2>
+        <div class="flex">
+          <h4>Auto</h4>
 
-          <h4 class="bs-callout bs-callout-danger">NOTE: All products listed
-          here contain DXM hBr as the sole active ingredient.</h4>
+          <div id="checkbox">
+            <label class="switch">
+              <input type="checkbox" id="modeSwitch" onclick="changeMode('slow')">
+              <span class="slider round"></span>
+            </label>
+          </div>
+          <h4>Manual</h4>
+        </div>
+        <div class="form-group" id="autoInput">
+          <h2>Auto mode:</h2>
 
-          <h4><br> I weigh
-        <input type="text" name="weight" value="" size="6" oninput="fix()" class="form-control" placeholder="Weight">
-                in
-             <select name="wunit" type="text" onchange="fix()" class="form-control">
-              <option value="1" selected>kg
-              <option value="0.4536">lbs
-           </select>&nbsp;and I want to take&nbsp;
-              <select name="substance" onchange="fix()" class="form-control" id="substancetype"></select>
+          <h4 class="bs-callout bs-callout-danger">NOTE: All products listed here contain DXM hBr as the sole active ingredient.</h4>
+
+          <div class="form-inline">
+            <form action="" method="POST" name="autoForm" type="post" class="">
+              <h4>
+                <br> I weigh
+                <input type="text" name="weight" id="weightAutoInput" value="" size="6" oninput="autoMode()" class="form-control" placeholder="Weight"> in
+                <select name="wunit" id="autoWeightUnit" type="text" onchange="autoMode()" class="form-control">
+                  <option value="1" selected>kg
+                    <option value="0.4536">lbs
+                </select>&nbsp;and I want to take&nbsp;
+                <select name="substance" onchange="autoMode()" class="form-control" id="autoSubstance"></select>
               </h4>
+            </form>
+          </div>
 
-      </div>
-      <div id="manualInput" class="form-group">
-        <h2>Manual mode:</h2>
-        <h4 class="bs-callout bs-callout-danger">
-            NOTE: Please make sure your product does not contain the following: <a href="https://wiki.tripsit.me/wiki/DXM#Adulteration">Acetaminophen(Paracetamol), Guaifenesin, Antihistamines or Pseudoephedrine.</a> This is still intended to be used with DXM hBr product only.
+        </div>
+        <div id="manualInput" class="form-group">
+          <h2>Manual mode:</h2>
+          <h4 class="bs-callout bs-callout-danger">
+            NOTE: Please make sure your product does not contain the following:
+            <a href="https://wiki.tripsit.me/wiki/DXM#Adulteration">Acetaminophen(Paracetamol), Guaifenesin, Antihistamines or Pseudoephedrine.</a> This is still intended to be
+            used with DXM hBr product only.
           </h4>
-        <h4>
-             <br>
-             I weigh
-           <input type="text" name="weightManual" value="" size="6" oninput="manual()" class="form-control" placeholder="Weight">
-                   in
-                <select name="wunitManual" type="text" onchange="manual()" class="form-control">
-                 <option value="1" selected>kg
-                 <option value="0.4536">lbs
-              </select>&nbsp;and I want to take&nbsp;
-           <input type="number" name="manualMode" value="" id="manualMode" oninput="manual()" class="form-control" placeholder="" size="2">
-          mg dxm per
-            <select name="per5" id="per5" onchange="manual()">
-              <option value="1">1 ml</option>
-              <option value="3">3 ml</option>
-              <option value="5">5 ml</option>
-              <option value="10">10 ml</option>
-              <option value="15">15 ml</option>
-              <option value="20">20 ml</option>
-            </select>
-           </h4>
-      </div>
+          <h4>
+            <br> I weigh
+            <div class="form-inline">
+              <form action="" method="POST" name="manualForm" type="post" class="">
+                <input type="text" name="weightManual" id="weightManualInput" value="" size="6" oninput="manual()" class="form-control" placeholder="Weight"> in
+                <select id="manualWeightUnit" name="wunitManual" type="text" onchange="manual()" class="form-control">
+                  <option value="1" selected>kg
+                    <option value="0.4536">lbs
+                </select>&nbsp;and I want to take&nbsp;
+                <input type="number" name="manualMode" value="1" id="manualMode" oninput="manual()" class="form-control" placeholder="" size="2">
+                 mg dxm per
+                <select name="per5" id="per5" onchange="manual()">
+                  <option value="1" selected>1 ml</option>
+                  <option value="3">3 ml</option>
+                  <option value="5">5 ml</option>
+                  <option value="10">10 ml</option>
+                  <option value="15">15 ml</option>
+                  <option value="20">20 ml</option>
+                </select>
+          </h4>
+            </form>
+          </div>
+          <table>
+            <tr>
+              <td class="td-left">
+                <h4>Plateau</h4>
+              </td>
+              <td>
+                <h4>Minimum</h4>
+              </td>
+              <td>
+                <h4>Maximum</h4>
+              </td>
+            </tr>
+            <tr class="tr-first outputResult">
+              <td class="td-left">
+                <p class="tdText">1st:</p>
+              </td>
+              <td>
+                <p class="tdText">
+                  <span id="p1l"></span>
+                </p>
+              </td>
+              <td class="outputResult">
+                <p class="tdText">
+                  <span id="p1h"></span>
+                </p>
+              </td>
+            </tr>
+            <tr class="tr-second outputResult">
+              <td class="td-left">
+                <p class="tdText">2nd:</p>
+              </td>
+              <td>
+                <p class="tdText">
+                  <span id="p2l"></span>
+                </p>
+              </td>
+              <td>
+                <p class="tdText">
+                  <span id="p2h"></span>
+                </p>
+              </td>
+            </tr>
+            <tr class="tr-third outputResult">
+              <td class="td-left">
+                <p class="tdText">3rd:</p>
+              </td>
+              <td>
+                <p class="tdText">
+                  <span id="p3l"></span>
+                </p>
+              </td>
+              <td>
+                <p class="tdText">
+                  <span id="p3h"></span>
+                </p>
+              </td>
+            </tr>
+            <tr class="tr-fourth outputResult">
+              <td class="td-left">
+                <p class="tdText">4th:</p>
+              </td>
+              <td>
+                <p class="tdText">
+                  <span id="p4l"></span>
+                </p>
+              </td>
+              <td>
+                <p class="tdText">
+                  <span id="p4h"></span>
+                </p>
+              </td>
+            </tr>
+          </table>
 
-      <p>
-        <table>
-          <tr>
-            <td class="td-left">
-              <h4>Plateau</h4>
-            </td>
-            <td>
-              <h4>Minimum</h4>
-            </td>
-            <td>
-              <h4>Maximum</h4>
-            </td>
-          </tr>
-          <tr class="tr-first outputResult">
-            <td class="td-left">
-              <p class="tdText">1st:</p>
-            </td>
-            <td>
-              <p class="tdText"><span id="p1l"></span></p>
-            </td>
-            <td class="outputResult">
-              <p class="tdText"><span id="p1h"></span></p>
-            </td>
-          </tr>
-          <tr class="tr-second outputResult">
-            <td class="td-left">
-              <p class="tdText">2nd:</p>
-            </td>
-            <td>
-              <p class="tdText"><span id="p2l"></span></p>
-            </td>
-            <td>
-              <p class="tdText"><span id="p2h"></span></p>
-            </td>
-          </tr>
-          <tr class="tr-third outputResult">
-            <td class="td-left">
-              <p class="tdText">3rd:</p>
-            </td>
-            <td>
-              <p class="tdText"><span id="p3l"></span></p>
-            </td>
-            <td>
-              <p class="tdText"><span id="p3h"></span></p>
-            </td>
-          </tr>
-          <tr class="tr-fourth outputResult">
-            <td class="td-left">
-              <p class="tdText">4th:</p>
-            </td>
-            <td>
-              <p class="tdText"><span id="p4l"></span></p>
-            </td>
-            <td>
-              <p class="tdText"><span id="p4h"></span></p>
-            </td>
-          </tr>
-        </table>
-        </form>
-    </div>
-    <br />
-    <p>Note: You should always start low and work your way up untill you find the doses that are right for you.</p>
-    </p>
-    <p>Please note, these tools were developed and tested to the best possible ability by the TripSit team, and the greatest effort has been made not to produce incorrect or misleading results, though for unforeseen reasons these may occur. Always check
-      your maths, and be careful. If you have any questions, suggestions or error reports on this tool, you can contact us <a href="http://tripsit.me/contact-us/">here</a><span>.</span></p>
-    <p>See a product not listed? Contact us <a href="http://tripsit.me/contact-us/">here</a> with a link to your product.</p>
-  </div
-</body>
+          <p>Note: You should always start low and work your way up untill you find the doses that are right for you.</p>
+
+          <p>Please note, these tools were developed and tested to the best possible ability by the TripSit team, and the greatest
+            effort has been made not to produce incorrect or misleading results, though for unforeseen reasons these may
+            occur. Always check your maths, and be careful. If you have any questions, suggestions or error reports on this
+            tool, you can contact us
+            <a href="http://tripsit.me/contact-us/">here</a>
+            <span>.</span>
+          </p>
+          <p>See a product not listed? Contact us
+            <a href="http://tripsit.me/contact-us/">here</a> with a link to your product.</p>
+        </div </body>
 
 </html>

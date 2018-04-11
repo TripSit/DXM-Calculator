@@ -4,7 +4,7 @@ Number.prototype.round = function (places) {
 };
 
 window.onload = function () {
-  var myArray = [
+  var dxmProducts = [
     // Value is dxm hBr per 1 mL
     { value: 10, name: 'RoboCough (ml)', type: 'HBr' },
     { value: 88.5, name: 'Robitussin DX (oz)', type: 'HBr' },
@@ -14,14 +14,16 @@ window.onload = function () {
     { value: 30, name: '30mg Gelcaps (30 mg caps)', type: 'HBr' },
   ];
 
-  var select = document.getElementById('substancetype');
-  for (i = 0; i < myArray.length; i++) {
-    select.options[select.options.length] = new Option(myArray[i].name, myArray[i].value);
+  // Populate automode's select options 
+  var autoModeOpions = document.getElementById('autoSubstance').options;
+  for (i = 0; i < dxmProducts.length; i++) {
+    autoModeOpions[i] = new Option(dxmProducts[i].name, dxmProducts[i].value);
   }
 
   changeMode();
 };
 
+// Calculate each plat min/max value
 function addInfo(weight, unit) {
   $('#p1l').text((weight * 1.5).round(2) + ' ' + unit);
   $('#p1h').text((weight * 2.5).round(2) + ' ' + unit);
@@ -33,17 +35,16 @@ function addInfo(weight, unit) {
   $('#p4h').text((weight * 20).round(2) + ' ' + unit);
 }
 
-var fix = function () {
-  var t = document.getElementById('substancetype');
-  var selectedText = t.options[t.selectedIndex].text;
+
+var autoMode = function () {
+  var autoSubstance = document.getElementById('autoSubstance');
+  var autoValue = autoSubstance.value;
+  var selectedText = autoSubstance[autoSubstance.selectedIndex].text;
   var unit = selectedText.match(/\(.*?\)/);
-  
-  var calculate;
-  calculate = parseFloat(document.tform.wunit.options[
-    document.tform.wunit.selectedIndex].value) *
-    parseFloat(document.tform.weight.value) /
-    parseFloat(document.tform.substance.options[
-      document.tform.substance.selectedIndex].value);
+  var autoWeightUnit = document.getElementById("autoWeightUnit").value;
+  var weightAutoInput = document.getElementById("weightAutoInput").value;
+
+  var calculate = autoWeightUnit * weightAutoInput / autoValue;
   if (isNaN(calculate)) {
     return;
   }
@@ -52,14 +53,12 @@ var fix = function () {
 };
 
 var manual = function () {
-  var calculate;
-  var per5 = document.getElementById('per5');
-  var per5Value = per5.options[per5.selectedIndex].value;
-  var manual = document.getElementById('manualMode');
-  calculate = parseFloat(document.tform.wunitManual.options[
-    document.tform.wunitManual.selectedIndex].value) *
-    parseFloat(document.tform.weightManual.value) /
-    (manual.value / per5Value);
+  var per5 = document.getElementById('per5').value;
+  var manualValue = document.getElementById('manualMode').value;
+  var manualWeightUnit = document.getElementById("manualWeightUnit").value;
+  var weightManualInput = document.getElementById("weightManualInput").value;
+
+  var calculate = manualWeightUnit * weightManualInput / (manualValue / per5);
   if (isNaN(calculate)) {
     return;
   }
