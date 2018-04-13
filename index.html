@@ -120,13 +120,13 @@
 
           <div id="checkbox">
             <label class="switch">
-              <input type="checkbox" id="modeSwitch" onclick="changeMode('slow')">
+              <input type="checkbox" id="modeSwitch" onclick="changeMode()">
               <span class="slider round"></span>
             </label>
           </div>
           <h4>Manual</h4>
         </div>
-        <div class="form-group" id="autoInput">
+        <div class="form-group active" id="autoInput">
           <h2>Auto mode:</h2>
 
           <h4 class="bs-callout bs-callout-danger">NOTE: All products listed here contain DXM hBr as the sole active ingredient.</h4>
@@ -135,8 +135,8 @@
             <form action="" method="POST" name="autoForm" type="post" class="">
               <h4>
                 <br> I weigh
-                <input type="text" name="weight" id="weightAutoInput" value="" size="6" oninput="autoMode()" class="form-control" placeholder="Weight"> in
-                <select name="wunit" id="autoWeightUnit" type="text" onchange="autoMode()" class="form-control">
+                <input type="text" name="weight" id="weightAutoInput" value="" size="6" oninput="auto()" class="form-control" placeholder="Weight"> in
+                <select name="wunit" id="autoWeightUnit" type="text" onchange="auto()" class="form-control">
                   <option value="1" selected>kg
                     <option value="0.4536">lbs
                 </select>&nbsp;and I want to take&nbsp;
@@ -146,7 +146,7 @@
           </div>
 
         </div>
-        <div id="manualInput" class="form-group">
+        <div id="manualInput" class="form-group active">
           <h2>Manual mode:</h2>
           <h4 class="bs-callout bs-callout-danger">
             NOTE: Please make sure your product does not contain the following:
@@ -154,9 +154,11 @@
             used with DXM hBr product only.
           </h4>
           <h4>
-            <br> I weigh
+            <br> 
             <div class="form-inline">
+             
               <form action="" method="POST" name="manualForm" type="post" class="">
+                <span>I weigh</span> 
                 <input type="text" name="weightManual" id="weightManualInput" value="" size="6" oninput="manual()" class="form-control" placeholder="Weight"> in
                 <select id="manualWeightUnit" name="wunitManual" type="text" onchange="manual()" class="form-control">
                   <option value="1" selected>kg

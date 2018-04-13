@@ -3,8 +3,8 @@ Number.prototype.round = function (places) {
   return +(Math.round(this + 'e+' + places) + 'e-' + places);
 };
 
-window.onload = function () {
-  var dxmProducts = [
+window.onload =  () => {
+  let dxmProducts = [
     // Value is dxm hBr per 1 mL
     { value: 10, name: 'RoboCough (ml)', type: 'HBr' },
     { value: 88.5, name: 'Robitussin DX (oz)', type: 'HBr' },
@@ -15,36 +15,35 @@ window.onload = function () {
   ];
 
   // Populate automode's select options 
-  var autoModeOpions = document.getElementById('autoSubstance').options;
-  for (i = 0; i < dxmProducts.length; i++) {
+  let autoModeOpions = document.getElementById('autoSubstance').options;
+
+  dxmProducts.map((product, i) => {
     autoModeOpions[i] = new Option(dxmProducts[i].name, dxmProducts[i].value);
-  }
+  });
 
   changeMode();
 };
 
 // Calculate each plat min/max value
-function addInfo(weight, unit) {
-  $('#p1l').text((weight * 1.5).round(2) + ' ' + unit);
-  $('#p1h').text((weight * 2.5).round(2) + ' ' + unit);
-  $('#p2l').text((weight * 2.5).round(2) + ' ' + unit);
-  $('#p2h').text((weight * 7.5).round(2) + ' ' + unit);
-  $('#p3l').text((weight * 7.5).round(2) + ' ' + unit);
-  $('#p3h').text((weight * 15).round(2) + ' ' + unit);
-  $('#p4l').text((weight * 15).round(2) + ' ' + unit);
-  $('#p4h').text((weight * 20).round(2) + ' ' + unit);
-}
+const addInfo = (weight, unit) => {
+  let rows = ["p1l","p1h","p2l","p2h","p3l","p3h","p4l","p4h"];
+  let factor = [1.5, 2.5, 2.5, 7.5, 7.5, 15, 15, 20];
+  rows.map((element,i) => {
+    let row = document.getElementById(element);
+    row.innerHTML = ((weight * factor[i]).round(2) + ' '  + unit);
+  });
+};
 
 
-var autoMode = function () {
-  var autoSubstance = document.getElementById('autoSubstance');
-  var autoValue = autoSubstance.value;
-  var selectedText = autoSubstance[autoSubstance.selectedIndex].text;
-  var unit = selectedText.match(/\(.*?\)/);
-  var autoWeightUnit = document.getElementById("autoWeightUnit").value;
-  var weightAutoInput = document.getElementById("weightAutoInput").value;
+const auto = () => {
+  let autoSubstance = document.getElementById('autoSubstance');
+  let autoValue = autoSubstance.value;
+  let selectedText = autoSubstance[autoSubstance.selectedIndex].text;
+  let unit = selectedText.match(/\(.*?\)/);
+  let autoWeightUnit = document.getElementById("autoWeightUnit").value;
+  let weightAutoInput = document.getElementById("weightAutoInput").value;
 
-  var calculate = autoWeightUnit * weightAutoInput / autoValue;
+  let calculate = autoWeightUnit * weightAutoInput / autoValue;
   if (isNaN(calculate)) {
     return;
   }
@@ -52,13 +51,13 @@ var autoMode = function () {
   addInfo(calculate, unit);
 };
 
-var manual = function () {
-  var per5 = document.getElementById('per5').value;
-  var manualValue = document.getElementById('manualMode').value;
-  var manualWeightUnit = document.getElementById("manualWeightUnit").value;
-  var weightManualInput = document.getElementById("weightManualInput").value;
+const manual = () => {
+  let per5 = document.getElementById('per5').value;
+  let manualValue = document.getElementById('manualMode').value;
+  let manualWeightUnit = document.getElementById("manualWeightUnit").value;
+  let weightManualInput = document.getElementById("weightManualInput").value;
 
-  var calculate = manualWeightUnit * weightManualInput / (manualValue / per5);
+  let calculate = manualWeightUnit * weightManualInput / (manualValue / per5);
   if (isNaN(calculate)) {
     return;
   }
@@ -66,12 +65,18 @@ var manual = function () {
   addInfo(calculate, 'ml');
 };
 
-var changeMode = function (slow) {
-  if ($('#modeSwitch').prop('checked')) {
-    $('#manualInput').show(slow);
-    $('#autoInput').hide(slow);
+const changeMode =  () => {
+  let modeSwitch = document.getElementById("modeSwitch");
+  let manualMode = document.getElementById("manualInput");
+  let autoMode = document.getElementById("autoInput");
+
+  if (modeSwitch.checked) {
+    autoMode.classList.add("modeHidden");
+    manualMode.classList.remove("modeHidden");
+    manual();
   } else {
-    $('#autoInput').show(slow);
-    $('#manualInput').hide(slow);
+    autoMode.classList.remove("modeHidden");
+    manualMode.classList.add("modeHidden");
+    auto();
   }
 };
