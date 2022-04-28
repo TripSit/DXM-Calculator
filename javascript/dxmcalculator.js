@@ -12,7 +12,7 @@ window.onload =  () => {
     { value: 15, name: 'Robitussin Gelcaps (15 mg caps)', type: 'HBr' },
     { value: 1, name: 'Pure (mg)', type: 'Pure' },
     { value: 30, name: '30mg Gelcaps (30 mg caps)', type: 'HBr' },
-    { value: 38.94, name: 'RoboTablets (30 mg tablets)', type: 'Pure' }
+    { value: 40.9322, name: 'RoboTablets (30 mg tablets)', type: 'Pure' }
   ];
 
   // Populate automode's select options
